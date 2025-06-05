@@ -1,0 +1,8 @@
+<aside th:fragment="sidebar" class="sidebar">
+    <h2>Welcome Admin</h2>
+    <hr>
+    <ul>
+        <li><a th:classappend="${active == 'dashboard'} ? 'active' "  th:href="@{/dashboard}"><i class="bi bi-stack"></i> Dashborad</a></li>
+        <li><a th:classappend="${active == 'form'} ? 'active' "  th:href="@{/form}"><i class="bi bi-cloud-upload-fill"></i> Add Product</a></li>
+    </ul>
+</aside>

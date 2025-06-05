@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Sidebar </title>
+</head>
+<body>
+
+<div th:replace="layout/sidebar :: sidebar"></div>
+
+<main>
+
+    <header>
+
+        <span> <i class="bi bi-card-list"></i> </span>
+
+        <figure>
+            <img class="profile" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" alt="">
+        </figure>
+    </header>
+
+
+    <div class="form-container">
+        <h3>Add New Products</h3>
+        <h1></h1>
+        <form th:object="${product}" method="post" th:action="@{/submit}">
+
+            <div class="row">
+                <div class="form-label">
+                    <label for="code">CODE</label>
+                    <input th:field="*{code}" id="code" type="text" placeholder="eg. P-000001..">
+                </div>
+                <div class="form-label">
+                    <label for="title">TITLE</label>
+                    <input th:field="*{title}" id="title" type="text" placeholder="eg. Coca..." />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-label">
+                    <label for="price">PRICE</label>
+                    <input th:field="*{price}" id="price" type="text" placeholder="eg. 1$...">
+                </div>
+                <div class="form-label">
+                    <label for="quantity">QUANTITY</label>
+                    <input th:field="*{quantity}" id="quantity" type="text" placeholder="eg. 100..." />
+                </div>
+            </div>
+
+            <button type="submit">Save Product</button>
+        </form>
+    </div>
+
+</main>
+
+</body>
+</html>
