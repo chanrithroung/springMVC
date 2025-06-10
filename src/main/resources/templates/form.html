@@ -22,17 +22,12 @@
         </figure>
     </header>
 
-
     <div class="form-container">
         <h3>Add New Products</h3>
         <h1></h1>
         <form th:object="${product}" method="post" th:action="@{/submit}">
 
             <div class="row">
-                <div class="form-label">
-                    <label for="code">CODE</label>
-                    <input th:field="*{code}" id="code" type="text" placeholder="eg. P-000001..">
-                </div>
                 <div class="form-label">
                     <label for="title">TITLE</label>
                     <input th:field="*{title}" id="title" type="text" placeholder="eg. Coca..." />
