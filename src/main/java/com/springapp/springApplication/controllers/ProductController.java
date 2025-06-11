@@ -30,6 +30,7 @@ public class ProductController {
     @GetMapping( path = "/dashboard")
     String dashboard(Model model) {
         model.addAttribute("active", "dashboard");
+        model.addAttribute("products", productRepository.findAll());
         return "dashboard";
     }
 

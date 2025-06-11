@@ -39,23 +39,11 @@
             </thead>
 
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>IPhone 13 ProMax</td>
-                <td><span class="label">800$</span></td>
-                <td>1</td>
-                <td>
-                    <div class="btn-group">
-                        <a class="btn btn-danger" href=""><i class="bi bi-trash"></i></a>
-                        <a class="btn btn-success" href=""><i class="bi bi-pencil-square"></i></a>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>IPhone 13 ProMax</td>
-                <td><span class="label">800$</span></td>
-                <td>1</td>
+            <tr th:each="product:${products} ">
+                <td><span th:text="${product.code}"></span></td>
+                <td><span th:text="${product.title}"></span></td>
+                <td><span class="label"><span th:text="${product.price}"></span>$</span></td>
+                <td><span th:text="${product.quantity}"></span></td>
                 <td>
                     <div class="btn-group">
                         <a class="btn btn-danger" href=""><i class="bi bi-trash"></i></a>
